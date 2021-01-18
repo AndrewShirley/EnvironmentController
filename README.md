@@ -30,10 +30,10 @@ The reason I wrote this project was for a number of reasons.
     - TextObject
     - Webserver
 
-AndrewsTimer
+AndrewsTimer:
     Andrew's Timer removes the complexity of interfacing with the ESP32's 4 hardware timers.  You can create an unlimited number of timers, which are all timed off of one main hardware timer.  Timers can be one-shot or recurring with 1mS precision.
 
-EnvironmentController
+EnvironmentController:
     The Environment Controller monitors the temperature and humidity and makes decisions to run the fan or humidifier
     in order to keep temperature and humidity within a range.
 
