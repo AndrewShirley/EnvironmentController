@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Andrew's PlugController Controller page</title>
+    
+    <style>
+        input[type=range]  {
+            width:150px
+        }
+
+    </style>
+</head> 
+
+<body>
+    <h1>Current Status</h1>
+    <table>
+        <tr>
+            <td><b>Temperature:</b> $Temperature&deg;C</td>
+            <td><b>Humidity:</b> $Humidity %</td>
+        </tr>
+    </table>
+    
+
+    <h1>Alarm Settings</h1>
+
+    <form action="/">
+        <table>
+            <tr>
+                <td><label for="HiTemp">Hi Temp</label></td>
+                <td><input id="HiTemp" name="HiTemp" type="range" min="21" max="50" value=$HiTemp onchange="Copy('HiTemp','HiTempSpan')"></td>
+                <td><span id="HiTempSpan"></span></td>
+            </tr>
+            <tr>
+                <td><label for="LoTemp">Low Temp</label></td>
+                <td><input id="LoTemp" name="LowTemp" type="range" min=0 max=20 value=$LowTemp onchange="Copy('LoTemp','LoTempSpan')"></td>
+                <td><span id="LoTempSpan"></span></td>
+            </tr>
+            <tr>
+                <td><label for="HiHum">Hi Humidity </label></td>
+                <td><input id="HiHum" name="HiHum" type="range" min=30 max=100 value=$HiHum onchange="Copy('HiHum','HiHumSpan')"></td>
+                <td><span id="HiHumSpan">aa</span></td>
+            </tr>
+
+            <tr>
+                <td><label for="LowHum">Low Humidity</label></td>
+                <td><input id="LowHum" name="LowHum" type="range" min=0 max=30 value=$LowHum onchange="Copy('LowHum','LowHumSpan')"></td>
+                <td><span id="LowHumSpan">bb</span></td>
+            </tr>
+            <tr>
+                <td colspan="3" align="right"><input  type="submit" value="Send Changes"></td>
+            </tr>
+            <tr>
+                <td colspan="3" align="right">$Message</td>
+            </tr>
+
+        </table>
+    </form>
+
+    <h1>Parameters:</h1>
+    $Parameters
+
+</body>
+
+<script>
+    
+    //document.getElementById("HiTempSpan").innerHTML = document.getElementById("HiTemp").value
+
+    // Forces an update to copy current value from slider to span   
+    const e = new Event("change");
+    document.getElementById("HiTemp").dispatchEvent(e);
+    document.getElementById("LoTemp").dispatchEvent(e);
+    document.getElementById("HiHum").dispatchEvent(e);
+    document.getElementById("LowHum").dispatchEvent(e);
+
+
+    function Copy(FromID, ToID){
+        var Val = document.getElementById(FromID).value;
+        document.getElementById(ToID).innerHTML = Val;
+    }
+
+</script>
+
+</html>
