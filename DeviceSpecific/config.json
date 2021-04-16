@@ -4,8 +4,8 @@
         "Password": "Password1"
     },
     "MQTT":{
-        "Server": "192.168.2.208",
-        "ClientID": "OutletController_1",
+        "Server": "10.10.10.1",
+        "ClientID": "MQTTCliendID",
         "SubscribeTopic": "OutletController_1/Input",
         "PublishTopic": "OutletController_1/Output"
     },
