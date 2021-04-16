@@ -1,7 +1,7 @@
 {
     "Wifi":{
-        "SSID": "Deepbot",
-        "Password": "Shirley1"
+        "SSID": "MyBotsWIFI",
+        "Password": "Password1"
     },
     "MQTT":{
         "Server": "192.168.2.208",
